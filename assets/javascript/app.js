@@ -4,7 +4,7 @@ $(document).ready(function () {
     /// Setting the Answers
 
     // var timeRemaining;
-    var score =0;
+    var score = 0;
     var  timernumber =31;
     var intervalId;
 
@@ -112,6 +112,8 @@ $(document).ready(function () {
 
     function startgame() {
 
+    
+
         $(".startbutton").click(function () {
             $("#buttons").show();
             $("#startbutton").hide();
@@ -142,7 +144,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            // if (score < 1) {
+                score++;
+            // };
+        
             
             
         });
@@ -187,7 +193,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            // if (score < 2) {
+                score++;
+            // };
+
         });
 
         $(".choiceB, .choiceC, .choiceD").click(function () {
@@ -199,6 +209,9 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question3();
         });
+
+        $("#scorenumber").text(score);
+
     }
 
     function question3() {
@@ -220,7 +233,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+
+            // if (score < 3) {
+                score++;
+            // };
             
         });
 
@@ -233,6 +250,8 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question4();
         });
+
+        $("#scorenumber").text(score);
     }
 
     function question4() {
@@ -254,7 +273,10 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            // if (score < 4) {
+                score++;
+            // };
 
         });
 
@@ -267,6 +289,8 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question5();
         });
+
+        $("#scorenumber").text(score);
     }
 
     function question5() {
@@ -288,7 +312,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            if (score < 5) {
+                score++;
+            };
+
         });
 
         $(".choiceB, .choiceC, .choiceD").click(function () {
@@ -300,6 +328,7 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question6();
         });
+        $("#scorenumber").text(score);
     }
 
     function question6() {
@@ -321,7 +350,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            if (score < 6) {
+                score++;
+            };
+
         });
 
         $(".choiceA, .choiceB, .choiceD").click(function () {
@@ -333,6 +366,7 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question7();
         });
+        $("#scorenumber").text(score);
     }
 
     function question7() {
@@ -354,7 +388,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            if (score < 7) {
+                score++;
+            };
+
         });
 
         $(".choiceA, .choiceC, .choiceD").click(function () {
@@ -366,6 +404,7 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question8();
         });
+        $("#scorenumber").text(score);
     }
 
     function question8() {
@@ -387,7 +426,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            if (score < 8) {
+                score++;
+            };
+            
         });
 
         $(".choiceA, .choiceB, .choiceC").click(function () {
@@ -399,6 +442,7 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question9();
         });
+        $("#scorenumber").text(score);
     }
 
     function question9() {
@@ -420,7 +464,11 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #timerbox, #scorebox").hide();
             $("#biopic, #nextbutton, #facttext, #correct, #youtube").show();
-            score++;
+            
+            if (score < 9) {
+                score++;
+            };
+
         });
 
         $(".choiceB, .choiceC, .choiceD").click(function () {
@@ -432,6 +480,7 @@ $(document).ready(function () {
         $("#nextbutton").click(function () {
             question10();
         });
+        $("#scorenumber").text(score);
     }
 
     function question10() {
@@ -453,7 +502,10 @@ $(document).ready(function () {
             stop();
             $("#buttons, #wrong, #nextbutton, #timerbox, #scorebox").hide();
             $("#biopic, #results, #facttext, #correct, #youtube").show();
-            score++;
+            
+            if (score < 10) {
+                score++;
+            };
             // results();
         });
 
@@ -467,24 +519,31 @@ $(document).ready(function () {
         $("#results").click(function () {
             results();
         });
+        $("#scorenumber, #finishnumber").text(score);
 
     }
 
     function results() {
         $("#buttons, #correct, #nextbutton, #timerbox, #scorebox, #wrong, #facttext, #youtube, #biopic, #question, #results").hide();
         $("#finish, #replay").show();
+
+        $("#scorenumber, #finish").text("Your Score is: " + score);
         // $("#replay").show();
         // function replay() {
         //     startgame();
         // }
+
+        $("#replay").click(function () {
+            // $("#replay").hide();
+            // $(".startbutton").show();
+            startgame();
+        });
         
     }
 
 ///////////////// REPLAY 
 
-    // $("#replay").click(function () {
-    //     question1();
-    // });
+    
 
 
     //// calling the core functions that trigger the game to start
